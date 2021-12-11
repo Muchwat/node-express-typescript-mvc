@@ -1,5 +1,5 @@
-import express from "express";
-const apiRoutes = express.Router();
+import express, { Router } from "express";
+const apiRoutes:Router = express.Router();
 import HomeController from "../controllers/home";
 import UserController from "../controllers/user.controller";
 import auth  from "../middleware/auth";
