@@ -8,4 +8,4 @@ interface DBConfigType {
     dialect: Dialect;
 }
 
-export {DBConfigType};
+export { DBConfigType };

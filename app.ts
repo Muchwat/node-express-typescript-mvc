@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import cors from 'cors';
+import corsConfig from "./cors/config";
 import apiRoutes from "./routes/api";
 import webRoutes from "./routes/web";
 import sequelize from "./database";
@@ -11,13 +11,8 @@ dotenv.config();
 const port = process.env.SERVER_PORT;
 const app: Application = express();
 
-const allowedOrigins = ['http://localhost:3000'];
 
-const options: cors.CorsOptions = {
-  origin: allowedOrigins
-};
-
-app.use(cors(options));
+app.use(corsConfig);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

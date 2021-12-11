@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-const webRoutes:Router = express.Router();
+const webRoutes: Router = express.Router();
 
 import HomeController from "../controllers/home";
 

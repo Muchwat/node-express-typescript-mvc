@@ -8,5 +8,8 @@
   },
   "jwt": {
     "key": "sfdv3454fdcfgb565fbnj5rgmjersdfycxfh345rghnz54rgf"
+  },
+  "cors": {
+    "allowedOrigins": ["http://localhost:3000"]
   }
 }
