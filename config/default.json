@@ -1,0 +1,12 @@
+{
+  "database": {
+    "host": "localhost",
+    "username": "root",
+    "password": "5512",
+    "database": "test",
+    "dialect": "mysql"
+  },
+  "jwt": {
+    "key": "sfdv3454fdcfgb565fbnj5rgmjersdfycxfh345rghnz54rgf"
+  }
+}
