@@ -35,13 +35,13 @@ const moveFileTo = (directory: string, req: any, res: any) => {
     }
 
     function move(file: any) {
-        const basename: string = randomString(16) + path.extname(file.name);
-        const filePath: string = path.join(path.resolve('./public'), directory, basename);
+        const baseName: string = randomString(16) + path.extname(file.name);
+        const filePath: string = path.join(path.resolve('./public'), directory, baseName);
         file.mv(filePath);
         data.push({
-            basename,
+            baseName,
             name: file.name,
-            mimetTpe: file.mimetype,
+            mimeType: file.mimetype,
             size: file.size
         });
     }
