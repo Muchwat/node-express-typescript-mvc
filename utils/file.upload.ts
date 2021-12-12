@@ -12,30 +12,28 @@ const moveFileTo = (directory: string, req: any, res: any) => {
 
     if (file.length) {
         try {
-            file.forEach((file: any) =>  move(file));
-            res.send({
+            file.forEach((file: any) => move(file));
+            return res.send({
                 status: true,
                 message: 'files uploaded successfully',
                 data
             });
         } catch (err) {
-            res.status(500).send(err);
+            return res.status(500).send(err);
         }
-        
-        return;
     }
 
     try {
         move(file);
-        res.send({
+        return res.send({
             status: true,
             message: 'file uploaded successfully',
             data
         });
     } catch (error) {
-        res.status(500).send(error);
+        return res.status(500).send(error);
     }
-    
+
     function move(file: any) {
         const basename: string = randomString(16) + path.extname(file.name);
         const filePath: string = path.join(path.resolve('./public'), directory, basename);
