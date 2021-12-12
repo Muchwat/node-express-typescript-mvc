@@ -42,6 +42,13 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/busboy@*":
+  "integrity" "sha512-8BPLNy4x+7lbTOGkAyUIZrrPEZ7WzbO7YlVGMf9EZi9J9mqILEkYbt/kgVWQ7fizOISo1hM/7cAsWVTa7EhQDg=="
+  "resolved" "https://registry.npmjs.org/@types/busboy/-/busboy-0.3.1.tgz"
+  "version" "0.3.1"
+  dependencies:
+    "@types/node" "*"
+
 "@types/config@^0.0.40":
   "integrity" "sha512-4s7JAciBzCJVy0fp7LPsMj0v3F+IeTdjpwMQ6owOx67UjcyurjP+8DO556u5/8PUhifAYp7H5b7D88RKFDBGEg=="
   "resolved" "https://registry.npmjs.org/@types/config/-/config-0.0.40.tgz"
@@ -66,6 +73,14 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/express-fileupload@^1.2.0":
+  "integrity" "sha512-WeiI4TyG/DlYNouLacQRHN9PKLKx7Hx6JGiyTaZ2zlaEEJsScYfXzyeQkgSC0Jn+FlRha1cqAJvbjRVEjor9/Q=="
+  "resolved" "https://registry.npmjs.org/@types/express-fileupload/-/express-fileupload-1.2.0.tgz"
+  "version" "1.2.0"
+  dependencies:
+    "@types/busboy" "*"
+    "@types/express" "*"
+
 "@types/express-serve-static-core@^4.17.18":
   "integrity" "sha512-zeu3tpouA043RHxW0gzRxwCHchMgftE8GArRsvYT0ByDMbn19olQHx5jLue0LxWY6iYtXb7rXmuVtSkhy9YZvQ=="
   "resolved" "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.26.tgz"
@@ -75,7 +90,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.17.13":
+"@types/express@*", "@types/express@^4.17.13":
   "integrity" "sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA=="
   "resolved" "https://registry.npmjs.org/@types/express/-/express-4.17.13.tgz"
   "version" "4.17.13"
@@ -259,6 +274,13 @@
   "resolved" "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
   "version" "1.1.2"
 
+"busboy@^0.3.1":
+  "integrity" "sha512-y7tTxhGKXcyBxRKAni+awqx8uqaJKrSFSNFSeRG5CsWNdmy2BIK+6VGWEW7TZnIO/533mtMEA4rOevQV815YJw=="
+  "resolved" "https://registry.npmjs.org/busboy/-/busboy-0.3.1.tgz"
+  "version" "0.3.1"
+  dependencies:
+    "dicer" "0.3.0"
+
 "bytes@3.1.0":
   "integrity" "sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg=="
   "resolved" "https://registry.npmjs.org/bytes/-/bytes-3.1.0.tgz"
@@ -418,6 +440,13 @@
   "resolved" "https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz"
   "version" "1.0.4"
 
+"dicer@0.3.0":
+  "integrity" "sha512-MdceRRWqltEG2dZqO769g27N/3PXfcKl04VhYnBlo2YhH7zPi88VebsjTKclaOyiuMaGU72hTfw3VkUitGcVCA=="
+  "resolved" "https://registry.npmjs.org/dicer/-/dicer-0.3.0.tgz"
+  "version" "0.3.0"
+  dependencies:
+    "streamsearch" "0.1.2"
+
 "diff@^4.0.1":
   "integrity" "sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A=="
   "resolved" "https://registry.npmjs.org/diff/-/diff-4.0.2.tgz"
@@ -525,6 +554,13 @@
   dependencies:
     "d" "1"
     "es5-ext" "~0.10.14"
+
+"express-fileupload@^1.2.1":
+  "integrity" "sha512-fWPNAkBj+Azt9Itmcz/Reqdg3LeBfaXptDEev2JM8bCC0yDptglCnlizhf0YZauyU5X/g6v7v4Xxqhg8tmEfEA=="
+  "resolved" "https://registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "busboy" "^0.3.1"
 
 "express@^4.17.1":
   "integrity" "sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g=="
@@ -1368,6 +1404,11 @@
   "integrity" "sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow="
   "resolved" "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   "version" "1.5.0"
+
+"streamsearch@0.1.2":
+  "integrity" "sha1-gIudDlb8Jz2Am6VzOOkpkZoanxo="
+  "resolved" "https://registry.npmjs.org/streamsearch/-/streamsearch-0.1.2.tgz"
+  "version" "0.1.2"
 
 "string-width@^4.1.0", "string-width@^4.2.0":
   "integrity" "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="
