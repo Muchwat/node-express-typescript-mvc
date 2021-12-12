@@ -1,14 +1,18 @@
-import PageParams from "../interfaces/page.interface";
+interface PageParams {
+    query?: any;
+    order?: Array<string>;
+    currentPage: any;
+}
 
 const Paginate = async (model: any, perPage: number, page: PageParams) => {
-    let currentPage: number = Math.max(0, Math.floor(page.currentPage)) || 1;
+    const currentPage: number = Math.max(0, Math.floor(Number(page.currentPage))) || 1;
     const limit: number = perPage;
     page.query = page.query || { where: {} };
     const offset: number = (currentPage - 1) * limit;
     const order: Array<Array<string>> = [page.order || ['id', 'ASC']];
-    let pagination = await model.findAndCountAll({ ...page.query, offset, limit, order });
-    const totalPages: number = Math.ceil(pagination.count / limit);
-    return { currentPage, perPage, totalPages, ...pagination };
+    const data:any = await model.findAndCountAll({ ...page.query, offset, limit, order });
+    const totalPages: number = Math.ceil(data.count / limit);
+    return { currentPage, perPage, totalPages, ...data };
 };
 
-export default Paginate;
+export  {Paginate, PageParams};

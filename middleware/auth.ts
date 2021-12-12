@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import config from "config";
-const jwtConfig: any = config.get('jwt');
+const key: string = config.get('jwt.key');
 
 const verifyToken = (req: any, res: any, next: any) => {
   const token = req.body.token || req.query.token || req.headers["x-access-token"];
@@ -10,7 +10,7 @@ const verifyToken = (req: any, res: any, next: any) => {
   }
 
   try {
-    const decoded = jwt.verify(token, jwtConfig.key);
+    const decoded = jwt.verify(token, key);
     req.user = decoded;
   } catch (err) {
     return res.status(401).send("Invalid Token");

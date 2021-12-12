@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import UserType from "../interfaces/user.interface";
-import Paginate from "../utils/pagination";
-import PageParams from "../interfaces/page.interface";
+import {PageParams, Paginate} from "../utils/pagination";
 import User from "../database/models/user.model"
 
 class UserController {
@@ -26,10 +25,10 @@ class UserController {
         let params: PageParams = {
             query: { where: {} },
             order: ['id', 'DESC'],
-            currentPage: Number(req.query.page)
+            currentPage: req.query.page
         }
 
-        const result = await Paginate(User, 3, params);
+        const result = await Paginate(User, 2, params);
         res.status(200).json(result);
     }
 
