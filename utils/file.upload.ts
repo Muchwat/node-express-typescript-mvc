@@ -10,7 +10,7 @@ const moveFilesTo = (directory: string, req: any, res: any) => {
     function move(file: any) {
         const baseName: string = randomString(16) + path.extname(file.name);
         try { file.mv(path.join(path.resolve('./public'), directory, baseName)); }
-        catch (error) { return res.status(500).send(error); }
+        catch (e) { return res.status(500).send({ status: false, message: 'upload error' }); }
         data.push({ baseName, name: file.name, mimeType: file.mimetype, size: file.size });
     }
 
