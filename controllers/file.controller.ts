@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import moveFileTo from "../utils/file.upload";
+import moveFilesTo from "../utils/file.upload";
 class FileController {
     static saveImage(req: Request, res: Response) {
-        moveFileTo('images', req, res);
+        moveFilesTo('images', req, res);
     }
 
     static saveDocument(req: Request, res: Response) {
-        moveFileTo('documents', req, res);
+        moveFilesTo('documents', req, res);
     }
 }
 
