@@ -14,4 +14,5 @@ apiRoutes.post('/user/delete', UserController.delete);
 apiRoutes.post('/user/paginate', UserController.paginate);
 apiRoutes.post('/save/image', FileController.saveImage);
 apiRoutes.post('/save/document', FileController.saveDocument);
+
 export default apiRoutes;

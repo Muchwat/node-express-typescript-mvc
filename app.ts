@@ -14,7 +14,7 @@ const app: Application = express();
 
 app.use(fileUpload({
     limits: {
-        fileSize: 1024 * 1024 // 1 MB
+        fileSize: 1024 * 1024 * 3 // 3 MB
     },
     abortOnLimit: true
 }));
@@ -27,11 +27,6 @@ app.use('/', webRoutes);
 app.use('/api', apiRoutes);
 
 sequelize.sync().then(() => {
-    try {
-        app.listen(port, (): void => {
-            console.log(`Connected successfully on port ${port}`);
-        });
-    } catch (error: any) {
-        console.error(`Error occured: ${error.message}`);
-    }
+    try { app.listen(port, (): void => console.log(`served on port: ${port}`)); } 
+    catch (error: any) { console.error(`error occured: ${error.message}`); }
 });

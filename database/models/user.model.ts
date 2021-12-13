@@ -1,21 +1,19 @@
 import { Model, Table, AutoIncrement, PrimaryKey, Column, AllowNull, NotEmpty } from "sequelize-typescript";
 
-export interface UserI {
-    id?: number | null
-    firstName: string
-    lastName: string
-    email: string
-    password: string
+export interface UserType {
+    id?: number | null;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
 }
 
-@Table(
-    {
-        tableName: "user",
-        timestamps: true
-    }
-)
+@Table({
+    tableName: "user",
+    timestamps: true
+})
 
-class User extends Model implements UserI {
+class User extends Model implements UserType {
 
     @AutoIncrement
     @PrimaryKey
