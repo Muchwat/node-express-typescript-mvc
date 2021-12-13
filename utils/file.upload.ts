@@ -14,7 +14,7 @@ const moveFilesTo = (directory: string, req: any, res: any) => {
         data.push({ baseName, name: file.name, mimeType: file.mimetype, size: file.size });
     }
 
-    file.length ? file.forEach((file: any) => move(file)) : move(file);
+    Boolean(file.length) ? file.forEach((file: any) => move(file)) : move(file);
     return res.send({ status: true, message: 'uploaded successfully', data });
 }
 
